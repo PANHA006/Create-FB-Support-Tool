@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- PWA Information -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="apple-touch-icon" href="logo/icon.jpg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TSP">
+
+    <title>Tool Support Pro - Unified</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+        }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
+            font-size: 12px;
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .neo-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(15px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .animate-entry {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-900">
+
+    <!-- Scrollable Wrapper -->
+    <div class="min-h-screen flex flex-col">
+        
+        <!-- Header (Non-fixed) -->
+        <header class="bg-white ps-5 pe-2 py-2 flex justify-between items-center border-b border-slate-200">
+            <div>
+                <h1 class="text-2xl font-extrabold tracking-tight text-slate-900">Tool Support Pro</h1>
+                <p class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest pt-1">Authentication Hub</p>
+            </div>
+            <div class="ml-4">
+                <img src="logo/logo.png" alt="AccuTool Pro Logo" class="w-16 h-16 object-contain p-2 m-1 rounded-3xl border border-slate-200">
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <main class="flex-1 px-4 py-4 space-y-4">
+            
+            <!-- NEW TOP: Khmer Name Generator -->
+            <section class="max-w-2xl mx-auto w-full">
+                <div class="rounded-[2rem] border border-pink-300 bg-gradient-to-b from-white to-[#FFF5F8] p-4 sm:p-5 shadow-[0_28px_70px_-34px_rgba(244,114,182,0.22)]">
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-[1rem] bg-[#FCE7F3] text-[#EC4899] flex items-center justify-center shadow-[inset_0_-1px_0_rgba(255,255,255,0.8)]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            </div>
+                            <div>
+                                <h2 class="text-[1rem] sm:text-[1rem] font-black tracking-tight text-slate-800">Khmer Name Generator</h2>
+                            </div>
+                        </div>
+                        <span class="shrink-0 rounded-xl bg-[#FCE7F3] px-2 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-pink-500">Identity</span>
+                    </div>
+                    
+                    <div class="flex flex-col gap-3">
+                        <div class="flex gap-2">
+                            <div class="relative flex-1">
+                                <input type="text" id="khmer-name-result" readonly placeholder="Khmer Name Here..."
+                                    class="w-full rounded-2xl border border-[#FBCFE8] bg-[#FDF2F8] px-4 py-3 text-[13px] font-bold text-slate-800 outline-none transition-all">
+                            </div>
+                            <button type="button" onclick="copyKhmerName()" class="w-12 shrink-0 rounded-2xl border border-[#FBCFE8] bg-white text-[#EC4899] flex items-center justify-center transition hover:bg-[#FDF2F8] active:scale-[0.99]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 9h8v10H9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="flex gap-2">
+                            <div class="relative flex-1">
+                                <input type="text" id="khmer-latin-result" readonly placeholder="Khmer Latin Name Here..."
+                                    class="w-full rounded-2xl border border-[#FBCFE8] bg-[#FDF2F8] px-4 py-3 text-[13px] font-bold text-slate-800 outline-none transition-all">
+                            </div>
+                            <button type="button" onclick="copyKhmerLatin()" class="w-12 shrink-0 rounded-2xl border border-[#FBCFE8] bg-white text-[#EC4899] flex items-center justify-center transition hover:bg-[#FDF2F8] active:scale-[0.99]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 9h8v10H9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path></svg>
+                            </button>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <button type="button" onclick="generateKhmerName()" class="flex-1 rounded-2xl bg-gradient-to-r from-[#EC4899] to-[#DB2777] px-4 py-2.5 text-sm font-extrabold text-white shadow-[0_16px_36px_-22px_rgba(236,72,153,0.95)] transition-all active:scale-[0.99] flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                Generate
+                            </button>
+                            <select id="khmer-name-gender" class="w-1/3 sm:w-1/3 rounded-2xl border border-[#FBCFE8] bg-white px-4 py-2.5 text-sm font-bold text-[#EC4899] outline-none">
+                                <option value="all">All Genders</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- TOP: 2FA Quick Checker -->
+            <section class="max-w-2xl mx-auto w-full">
+                <div class="rounded-[2rem] border border-purple-300 bg-gradient-to-b from-white to-[#F5F8FF] p-4 sm:p-5 shadow-[0_28px_70px_-34px_rgba(15,23,42,0.22)]">
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-[1rem] bg-[#EEF2FF] text-[#5D54F1] flex items-center justify-center shadow-[inset_0_-1px_0_rgba(255,255,255,0.8)]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <div>
+                                <h2 class="text-[1rem] sm:text-[1rem] font-black tracking-tight text-slate-800">2FA Generator</h2>
+                            </div>
+                        </div>
+                        <span class="shrink-0 rounded-xl bg-[#EEF3FF] px-2 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">Secure</span>
+                    </div>
+                    
+                    <form id="quick-otp-form" class="space-y-3">
+                        <div class="relative">
+                            <input type="text" id="quick-2fa-input" placeholder="QIRU 4DP7 LJNL ..."
+                                class="w-full rounded-2xl border border-[#DDE5F8] bg-[#EEF3FF] px-4 py-3 pr-12 text-[11px] font-medium uppercase tracking-[0.1em] text-slate-800 placeholder-slate-500 outline-none transition-all focus:border-[#948FFF] focus:bg-white">
+                            <button id="quick-clear-input" type="button" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear secret key">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                            </button>
+                        </div>
+
+                        <button type="submit" class="w-full rounded-2xl bg-gradient-to-r from-[#5D54F1] to-[#4D44E8] px-4 py-2.5 text-base font-extrabold text-white shadow-[0_16px_36px_-22px_rgba(93,84,241,0.95)] transition-all active:scale-[0.99]">
+                            Generate Code
+                        </button>
+                    </form>
+
+                    <div id="quick-result" class="hidden mt-4 animate-entry">
+                        <div class="overflow-hidden rounded-2xl border border-[#DDE5F8] bg-white shadow-[0_22px_45px_-34px_rgba(93,84,241,0.7)]">
+                            <div class="flex items-center justify-between gap-3 border-b border-[#DDE5F8] bg-[#EEF3FF] px-3 py-2">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#7A85F5]">Authentication Code</p>
+                                    <p id="quick-otp-timer" class="text-[11px] font-black text-[#5D54F1]">30s</p>
+                                </div>
+                                <button type="button" onclick="copyToClipboard('quick-otp-code')" class="w-8 h-8 rounded-xl border border-[#D7DEFA] bg-white text-[#5D54F1] flex items-center justify-center transition hover:bg-[#F7F8FF]">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 9h8v10H9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path></svg>
+                                </button>
+                            </div>
+                            <div class="px-3 py-4 text-center">
+                                <p id="quick-otp-code" class="text-[2rem] sm:text-[2.2rem] font-black tracking-[0.14em] text-[#28295C] leading-none">000000</p>
+                            </div>
+                            <div class="h-1.5 bg-[#E3E8FB]">
+                                <div id="quick-otp-progress" class="h-full bg-gradient-to-r from-[#5D54F1] to-[#6B63FF] transition-all duration-1000 ease-linear" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- MIDDLE: Account Storage Form --><!-- MIDDLE: Account Storage Form -->
+            <section class="max-w-2xl mx-auto w-full">
+                <div class="bg-white rounded-[2rem] p-6 neo-shadow border border-purple-300">
+                    <form id="account-form" class="space-y-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-1.5 h-3 bg-indigo-500 rounded-full"></span>
+                            <h2 class="text-[9px] font-black text-slate-700 uppercase tracking-widest">Vault Entry</h2>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="relative">
+                                <label class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Profile Link</label>
+                                <div class="relative">
+                                    <input type="url" id="fb-link" placeholder="facebook.com/..." required 
+                                        class="w-full bg-slate-50 border-2 border rounded-2xl px-4 py-3 pr-10 text-xs font-medium outline-none focus:border-indigo-500/20 focus:bg-white transition-all">
+                                    <button type="button" id="clear-fb-link" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear profile link">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <p id="fb-link-hint" class="hidden text-[10px] font-medium text-amber-600 leading-relaxed px-1">
+                                Share links like <span class="font-bold">facebook.com/share/...</span> do not contain the UID directly. Open the share link first, then paste the redirected <span class="font-bold">profile.php?id=...</span> link.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="relative">
+                                    <label class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Secret Key</label>
+                                    <div class="relative">
+                                        <input type="text" id="fb-2fa" placeholder="QIRU 4DP7 LJNL ..." required 
+                                            class="w-full bg-slate-50 border-2 border rounded-2xl px-4 py-3 pr-10 text-xs font-medium outline-none focus:border-indigo-500/20 focus:bg-white transition-all">
+                                        <button type="button" id="clear-fb-2fa" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear secret key">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <label class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Password</label>
+                                    <div class="relative">
+                                        <input type="text" id="fb-pass" value="Digital@2026" placeholder="••••••••" required 
+                                            class="w-full bg-slate-50 border-2 border rounded-2xl px-4 py-3 pr-10 text-xs font-medium outline-none focus:border-indigo-500/20 focus:bg-white transition-all">
+                                        <button type="button" id="clear-fb-pass" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear password">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-[#5D54F1] to-[#4D44E8] text-white font-extrabold py-3.5 rounded-2xl shadow-2xl active:scale-[0.98] transition-all flex justify-center items-center gap-2 text-xs uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <span>Save to Private Vault</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- BOTTOM: Results List -->
+            <section class="max-w-2xl mx-auto w-full pb-20">
+                <div class="flex items-center justify-between mb-4 px-4">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-3 bg-indigo-500 rounded-[2rem]"></span>
+                        <h2 class="text-[9px] font-black text-slate-800 uppercase tracking-widest">Stored Records</h2>
+                    </div>
+                    <button onclick="showClearConfirmModal()" class="text-[8px] font-bold text-red-400 hover:text-red-500 transition-colors uppercase tracking-widest">Clear Vault</button>
+                </div>
+
+                <div id="account-list-container" class="grid grid-cols-1 gap-3">
+                    <!-- Records injected here -->
+                </div>
+                
+                <div id="empty-state" class="text-center py-12 bg-white/40 border-2 border-dashed border-slate-300 rounded-[2rem]">
+                    <p class="text-slate-400 text-[9px] font-bold uppercase tracking-widest">Vault is currently empty</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white rounded-3xl p-8 max-w-sm mx-4 shadow-2xl transform scale-95 transition-all duration-300" id="confirm-modal-content">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-extrabold text-slate-900 mb-2">Clear All Records?</h3>
+                <p class="text-sm text-slate-500 mb-6">This action will permanently delete all stored records from your vault. This cannot be undone.</p>
+                
+                <div class="flex gap-3">
+                    <button onclick="closeModal()" class="flex-1 px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-2xl hover:bg-slate-200 transition-all">
+                        Cancel
+                    </button>
+                    <button onclick="confirmClearAll()" class="flex-1 px-6 py-3 bg-red-500 text-white font-bold rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-200">
+                        Clear All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-2xl text-[9px] font-extrabold shadow-2xl opacity-0 transition-all duration-300 pointer-events-none z-[100] translate-y-[20px] uppercase tracking-wider">
+        Notification
+    </div>
+
+    <script>
+        let accounts = JSON.parse(localStorage.getItem('saved_accounts_grid_v6') || '[]');
+        let currentExtractedUID = "";
+        let quickOtpInterval = null;
+        let quickOtpSecret = "";
+        let fbLinkResolveToken = 0;
+        let fbLinkResolveTimeout = null;
+        const FB_RESOLVER_PROXY = 'https://api.codetabs.com/v1/proxy/?quest=';
+
+        // Extract ID from FB Link
+        function extractFBID(url) {
+            if (!url) return "";
+            try {
+                const parsedUrl = new URL(url);
+                const idMatch = parsedUrl.search.match(/[?&]id=(\d+)/);
+                if (idMatch) return idMatch[1];
+
+                const path = parsedUrl.pathname.split('/').filter(Boolean);
+                const normalizedPath = path.map(segment => segment.toLowerCase());
+                const lastSegment = path[path.length - 1] || "";
+
+                if (normalizedPath.includes('share')) return "";
+                if (/^\d+$/.test(lastSegment)) return lastSegment;
+                if (lastSegment.toLowerCase().startsWith('pfbid')) return "";
+                if (['profile.php', 'share', 'groups', 'people'].includes(lastSegment.toLowerCase())) return "";
+
+                return path.length > 0 ? lastSegment : "";
+            } catch (e) { return ""; }
+        }
+
+        function isFacebookShareStyleLink(url) {
+            try {
+                const parsedUrl = new URL(url);
+                return (
+                    parsedUrl.hostname.includes('facebook.com') &&
+                    (parsedUrl.pathname.includes('/share/') || parsedUrl.pathname.includes('/people/'))
+                );
+            } catch (err) {
+                return url.includes('/share/') || url.includes('/people/');
+            }
+        }
+
+        function updateUIDPreview(uid) {
+            const hint = document.getElementById('fb-link-hint');
+            currentExtractedUID = uid;
+
+            hint.classList.add('hidden');
+            hint.classList.remove('text-amber-600', 'text-indigo-600');
+        }
+
+        function setFBLinkHint(message, tone = 'amber') {
+            const hint = document.getElementById('fb-link-hint');
+            hint.textContent = message;
+            hint.classList.remove('hidden', 'text-amber-600', 'text-indigo-600');
+            hint.classList.add(tone === 'info' ? 'text-indigo-600' : 'text-amber-600');
+        }
+
+        function extractUIDFromResolvedContent(content) {
+            const patterns = [
+                /fb:\/\/profile\/(\d{8,})/i,
+                /[?&]id=(\d{8,})/i,
+                /set=pb\.(\d{8,})/i,
+                /entity_id["'=:\s\\\/]+(\d{8,})/i,
+                /owner(?:_id)?["'=:\s\\\/]+(\d{8,})/i
+            ];
+
+            for (const pattern of patterns) {
+                const match = content.match(pattern);
+                if (match) return match[1];
+            }
+
+            return "";
+        }
+
+        async function resolveFacebookUID(url) {
+            const response = await fetch(FB_RESOLVER_PROXY + encodeURIComponent(url));
+            if (!response.ok) {
+                throw new Error(`Resolver request failed with status ${response.status}`);
+            }
+
+            const content = await response.text();
+            return extractUIDFromResolvedContent(content);
+        }
+
+        document.getElementById('fb-link').addEventListener('input', (e) => {
+            const url = e.target.value.trim();
+            const requestToken = ++fbLinkResolveToken;
+            clearTimeout(fbLinkResolveTimeout);
+
+            const directUID = extractFBID(url);
+            if (directUID) {
+                updateUIDPreview(directUID);
+                return;
+            }
+
+            updateUIDPreview("");
+
+            if (!url) {
+                document.getElementById('clear-fb-link').classList.add('hidden');
+                return;
+            }
+
+            // Show/hide clear button
+            document.getElementById('clear-fb-link').classList.toggle('hidden', !url);
+
+            if (!isFacebookShareStyleLink(url)) {
+                return;
+            }
+
+            setFBLinkHint("Resolving Facebook link to numeric UID...", 'info');
+
+            fbLinkResolveTimeout = setTimeout(async () => {
+                try {
+                    const resolvedUID = await resolveFacebookUID(url);
+                    if (requestToken !== fbLinkResolveToken) return;
+
+                    if (resolvedUID) {
+                        updateUIDPreview(resolvedUID);
+                        showToast("UID RESOLVED");
+                    } else {
+                        setFBLinkHint("Could not extract a numeric UID from this Facebook link. Try opening it first, then paste the final profile link.");
+                    }
+                } catch (error) {
+                    if (requestToken !== fbLinkResolveToken) return;
+                    setFBLinkHint("Could not resolve this Facebook link right now. Check your connection or try again.");
+                }
+            }, 350);
+        });
+
+        // Clear buttons functionality for form fields
+        document.getElementById('clear-fb-link').addEventListener('click', function() {
+            const input = document.getElementById('fb-link');
+            input.value = '';
+            input.focus();
+            this.classList.add('hidden');
+            updateUIDPreview("");
+        });
+
+        document.getElementById('fb-2fa').addEventListener('input', function(e) {
+            document.getElementById('clear-fb-2fa').classList.toggle('hidden', !e.target.value.trim());
+        });
+
+        document.getElementById('clear-fb-2fa').addEventListener('click', function() {
+            const input = document.getElementById('fb-2fa');
+            input.value = '';
+            input.focus();
+            this.classList.add('hidden');
+        });
+
+        document.getElementById('fb-pass').addEventListener('input', function(e) {
+            document.getElementById('clear-fb-pass').classList.toggle('hidden', !e.target.value.trim());
+        });
+
+        document.getElementById('clear-fb-pass').addEventListener('click', function() {
+            const input = document.getElementById('fb-pass');
+            input.value = '';
+            input.focus();
+            this.classList.add('hidden');
+        });
+
+        const BASE32_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+
+        function normalizeSecret(secret) {
+            return secret.toUpperCase().replace(/[\s-]/g, '').replace(/=+$/g, '');
+        }
+
+        function base32ToBytes(secret) {
+            const normalized = normalizeSecret(secret);
+            if (!normalized) throw new Error('Secret key is empty');
+
+            let bits = '';
+            for (const char of normalized) {
+                const index = BASE32_ALPHABET.indexOf(char);
+                if (index === -1) throw new Error('Secret key must use Base32 characters');
+                bits += index.toString(2).padStart(5, '0');
+            }
+
+            const bytes = [];
+            for (let i = 0; i + 8 <= bits.length; i += 8) {
+                bytes.push(parseInt(bits.slice(i, i + 8), 2));
+            }
+
+            if (bytes.length === 0) throw new Error('Secret key is too short');
+            return Uint8Array.from(bytes);
+        }
+
+        function rotateLeft(value, shift) {
+            return ((value << shift) | (value >>> (32 - shift))) >>> 0;
+        }
+
+        function sha1(bytes) {
+            const message = Array.from(bytes);
+            const bitLength = BigInt(message.length * 8);
+
+            message.push(0x80);
+            while ((message.length % 64) !== 56) {
+                message.push(0);
+            }
+
+            for (let shift = 56n; shift >= 0n; shift -= 8n) {
+                message.push(Number((bitLength >> shift) & 0xffn));
+            }
+
+            let h0 = 0x67452301;
+            let h1 = 0xefcdab89;
+            let h2 = 0x98badcfe;
+            let h3 = 0x10325476;
+            let h4 = 0xc3d2e1f0;
+
+            for (let i = 0; i < message.length; i += 64) {
+                const words = new Array(80);
+
+                for (let j = 0; j < 16; j++) {
+                    const offset = i + (j * 4);
+                    words[j] = (
+                        (message[offset] << 24) |
+                        (message[offset + 1] << 16) |
+                        (message[offset + 2] << 8) |
+                        message[offset + 3]
+                    ) >>> 0;
+                }
+
+                for (let j = 16; j < 80; j++) {
+                    words[j] = rotateLeft(words[j - 3] ^ words[j - 8] ^ words[j - 14] ^ words[j - 16], 1);
+                }
+
+                let a = h0;
+                let b = h1;
+                let c = h2;
+                let d = h3;
+                let e = h4;
+
+                for (let j = 0; j < 80; j++) {
+                    let f;
+                    let k;
+
+                    if (j < 20) {
+                        f = (b & c) | ((~b) & d);
+                        k = 0x5a827999;
+                    } else if (j < 40) {
+                        f = b ^ c ^ d;
+                        k = 0x6ed9eba1;
+                    } else if (j < 60) {
+                        f = (b & c) | (b & d) | (c & d);
+                        k = 0x8f1bbcdc;
+                    } else {
+                        f = b ^ c ^ d;
+                        k = 0xca62c1d6;
+                    }
+
+                    const temp = (rotateLeft(a, 5) + f + e + k + words[j]) >>> 0;
+                    e = d;
+                    d = c;
+                    c = rotateLeft(b, 30);
+                    b = a;
+                    a = temp;
+                }
+
+                h0 = (h0 + a) >>> 0;
+                h1 = (h1 + b) >>> 0;
+                h2 = (h2 + c) >>> 0;
+                h3 = (h3 + d) >>> 0;
+                h4 = (h4 + e) >>> 0;
+            }
+
+            return Uint8Array.from([
+                (h0 >>> 24) & 0xff, (h0 >>> 16) & 0xff, (h0 >>> 8) & 0xff, h0 & 0xff,
+                (h1 >>> 24) & 0xff, (h1 >>> 16) & 0xff, (h1 >>> 8) & 0xff, h1 & 0xff,
+                (h2 >>> 24) & 0xff, (h2 >>> 16) & 0xff, (h2 >>> 8) & 0xff, h2 & 0xff,
+                (h3 >>> 24) & 0xff, (h3 >>> 16) & 0xff, (h3 >>> 8) & 0xff, h3 & 0xff,
+                (h4 >>> 24) & 0xff, (h4 >>> 16) & 0xff, (h4 >>> 8) & 0xff, h4 & 0xff
+            ]);
+        }
+
+        function hmacSha1(keyBytes, messageBytes) {
+            const blockSize = 64;
+            let key = Array.from(keyBytes);
+
+            if (key.length > blockSize) {
+                key = Array.from(sha1(key));
+            }
+
+            while (key.length < blockSize) {
+                key.push(0);
+            }
+
+            const innerPad = key.map(byte => byte ^ 0x36);
+            const outerPad = key.map(byte => byte ^ 0x5c);
+            const innerHash = sha1(Uint8Array.from([...innerPad, ...messageBytes]));
+
+            return sha1(Uint8Array.from([...outerPad, ...innerHash]));
+        }
+
+        function counterToBytes(counter) {
+            const bytes = new Uint8Array(8);
+            let value = BigInt(counter);
+
+            for (let i = 7; i >= 0; i--) {
+                bytes[i] = Number(value & 0xffn);
+                value >>= 8n;
+            }
+
+            return bytes;
+        }
+
+        function generateTOTP(secret, timestamp = Date.now()) {
+            const secretBytes = base32ToBytes(secret);
+            const counter = BigInt(Math.floor(timestamp / 1000 / 30));
+            const hash = hmacSha1(secretBytes, counterToBytes(counter));
+            const offset = hash[hash.length - 1] & 0x0f;
+            const binary = (
+                ((hash[offset] & 0x7f) << 24) |
+                (hash[offset + 1] << 16) |
+                (hash[offset + 2] << 8) |
+                hash[offset + 3]
+            ) >>> 0;
+
+            return String(binary % 1000000).padStart(6, '0');
+        }
+
+        function getSecondsRemaining(timestamp = Date.now()) {
+            const remaining = 30 - (Math.floor(timestamp / 1000) % 30);
+            return remaining === 0 ? 30 : remaining;
+        }
+
+        function stopQuickOtpUpdates() {
+            clearInterval(quickOtpInterval);
+            quickOtpInterval = null;
+        }
+
+        function syncQuickInputControls() {
+            const input = document.getElementById('quick-2fa-input');
+            document.getElementById('quick-clear-input').classList.toggle('hidden', !input.value.trim());
+        }
+
+        function renderQuickOTP(secret) {
+            const secondsRemaining = getSecondsRemaining();
+            const code = generateTOTP(secret);
+            document.getElementById('quick-otp-code').innerText = code;
+            document.getElementById('quick-otp-timer').innerText = `${secondsRemaining}s`;
+            document.getElementById('quick-otp-progress').style.width = `${(secondsRemaining / 30) * 100}%`;
+            document.getElementById('quick-result').classList.remove('hidden');
+        }
+
+        function getQuickOTP() {
+            const key = normalizeSecret(document.getElementById('quick-2fa-input').value);
+            if (!key) {
+                showToast("PASTE A SECRET KEY FIRST");
+                return;
+            }
+
+            try {
+                quickOtpSecret = key;
+                renderQuickOTP(key);
+                stopQuickOtpUpdates();
+                quickOtpInterval = setInterval(() => renderQuickOTP(quickOtpSecret), 1000);
+                showToast("CODE UPDATED");
+            } catch (e) {
+                stopQuickOtpUpdates();
+                document.getElementById('quick-otp-progress').style.width = '100%';
+                document.getElementById('quick-result').classList.add('hidden');
+                showToast("INVALID KEY FORMAT");
+            }
+        }
+
+        document.getElementById('quick-otp-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            getQuickOTP();
+        });
+
+        document.getElementById('quick-clear-input').addEventListener('click', () => {
+            const input = document.getElementById('quick-2fa-input');
+            input.value = "";
+            stopQuickOtpUpdates();
+            quickOtpSecret = "";
+            document.getElementById('quick-otp-progress').style.width = '100%';
+            document.getElementById('quick-result').classList.add('hidden');
+            syncQuickInputControls();
+            input.focus();
+        });
+
+        document.getElementById('quick-2fa-input').addEventListener('input', (e) => {
+            syncQuickInputControls();
+            if (normalizeSecret(e.target.value) === quickOtpSecret) return;
+            stopQuickOtpUpdates();
+            quickOtpSecret = "";
+            document.getElementById('quick-otp-progress').style.width = '100%';
+            document.getElementById('quick-result').classList.add('hidden');
+        });
+
+        document.getElementById('account-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Generate auto-increment ID
+            const lastRecordId = accounts.length > 0 ? parseInt(accounts[accounts.length - 1].recordId.replace('ID', '')) : 0;
+            const newRecordId = 'FB' + String(lastRecordId + 1).padStart(3, '0');
+            
+            const acc = {
+                recordId: newRecordId,
+                id: Date.now(),
+                uid: currentExtractedUID || "Unknown",
+                pass: document.getElementById('fb-pass').value,
+                twofa: document.getElementById('fb-2fa').value,
+                link: document.getElementById('fb-link').value
+            };
+
+            accounts.push(acc);
+            localStorage.setItem('saved_accounts_grid_v6', JSON.stringify(accounts));
+
+            // Only clear specific fields, keep password for convenience
+            document.getElementById('fb-link').value = '';
+            document.getElementById('fb-2fa').value = '';
+            // Keep password field value - don't clear it
+            currentExtractedUID = "";
+            renderCards();
+            showToast("SECURED TO VAULT");
+        });
+
+        function renderCards() {
+            const container = document.getElementById('account-list-container');
+            const empty = document.getElementById('empty-state');
+            container.innerHTML = '';
+            
+            if (accounts.length === 0) {
+                empty.classList.remove('hidden');
+                return;
+            }
+            empty.classList.add('hidden');
+
+            accounts.slice().reverse().forEach((acc) => {
+                const div = document.createElement('div');
+                div.className = "bg-white px-5 py-3.5 rounded-[2rem] border border-blue-200 neo-shadow animate-entry relative group";
+                
+                div.innerHTML = `
+                    <div class="flex justify-between items-start gap-3">
+                        <div class="space-y-1 flex-1 min-w-0">
+                            <div class="flex items-center gap-2 mb-1">
+                                <input type="text" value="${acc.recordId}" 
+                                    onchange="updateRecordId('${acc.id}', this.value)"
+                                    class="text-[15px] font-bold text-indigo-600 focus:border-indigo-400 outline-none w-20"
+                                    title="Click to edit ID">
+                            </div>
+                            <p class="text-[13px] font-extrabold text-slate-900 leading-tight truncate" title="${acc.uid}">${acc.uid}</p>
+                            <p class="text-[12px] font-medium text-slate-600 leading-tight truncate" title="${acc.pass}">${acc.pass}</p>
+                            <p class="text-[12px] font-mono font-bold text-indigo-600 leading-tight break-all uppercase tracking-wide">${acc.twofa}</p>
+                            <p class="text-[12px] text-blue-600 leading-tight truncate mt-1.5 pb-[4px] font-medium" title="${acc.link}">${acc.link}</p>
+                        </div>
+                        <div class="flex flex-col gap-1.5 shrink-0 ml-2">
+                            <button onclick="copyRaw('${acc.id}')" class="p-2 bg-slate-50 border border-blue-300 text-slate-400 rounded-xl hover:bg-indigo-600 hover:text-white transition-all shadow-sm flex-shrink-0 active:scale-95" id="copy-btn-${acc.id}">
+                                <svg class="w-4 h-4 text-blue-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                            <button onclick="deleteAcc('${acc.id}')" class="p-2 bg-red-50 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-all opacity-0 group-hover:opacity-100 shadow-sm flex-shrink-0 active:scale-95">
+                                <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function copyRaw(id) {
+            const acc = accounts.find(a => a.id == id);
+            const text = `${acc.uid}\n${acc.pass}\n${acc.twofa}\n${acc.link}`;
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            
+            // Visual feedback - show checkmark permanently and reveal delete button
+            const copyBtn = document.getElementById(`copy-btn-${id}`);
+            if (copyBtn) {
+                copyBtn.innerHTML = '<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>';
+                copyBtn.classList.add('bg-green-50', 'border-green-300');
+                copyBtn.classList.remove('bg-slate-50', 'border-blue-300', 'text-slate-400');
+                
+                // Show delete button permanently
+                const parentDiv = copyBtn.closest('.flex.flex-col');
+                if (parentDiv) {
+                    const deleteBtn = parentDiv.querySelector('button[onclick*="deleteAcc"]');
+                    if (deleteBtn) {
+                        deleteBtn.classList.remove('opacity-0');
+                        deleteBtn.classList.add('opacity-100');
+                    }
+                }
+            }
+            
+            showToast("DATA COPIED TO CLIPBOARD");
+        }
+
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).innerText;
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            showToast("OTP COPIED: " + text);
+        }
+
+        function deleteAcc(id) {
+            accounts = accounts.filter(a => a.id != id);
+            localStorage.setItem('saved_accounts_grid_v6', JSON.stringify(accounts));
+            renderCards();
+            showToast("REMOVED FROM VAULT");
+        }
+
+        function clearAll() {
+            if(confirm("Confirm: This will permanently delete all local records.")) {
+                accounts = [];
+                localStorage.setItem('saved_accounts_grid_v6', JSON.stringify(accounts));
+                renderCards();
+                showToast("VAULT WIPED");
+            }
+        }
+
+        // Modal functions
+        function showClearConfirmModal() {
+            const modal = document.getElementById('confirm-modal');
+            const modalContent = document.getElementById('confirm-modal-content');
+            modal.classList.remove('pointer-events-none');
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('confirm-modal');
+            const modalContent = document.getElementById('confirm-modal-content');
+            modal.classList.add('opacity-0');
+            modal.classList.add('pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+
+        function confirmClearAll() {
+            accounts = [];
+            localStorage.setItem('saved_accounts_grid_v6', JSON.stringify(accounts));
+            renderCards();
+            closeModal();
+            showToast("VAULT WIPED");
+        }
+
+        function updateRecordId(id, newRecordId) {
+            const acc = accounts.find(a => a.id == id);
+            if (acc) {
+                acc.recordId = newRecordId;
+                localStorage.setItem('saved_accounts_grid_v6', JSON.stringify(accounts));
+                showToast("ID UPDATED");
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateX(-50%) translateY(0)';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(-50%) translateY(20px)';
+            }, 2000);
+        }
+
+        // Khmer Name Generator Logic
+        const khmerFamilyNames = [
+            { kh: "សុខ", en: "Sok" }, { kh: "សៅ", en: "Sao" }, { kh: "ចាន់", en: "Chan" },
+            { kh: "ជា", en: "Chea" }, { kh: "ហេង", en: "Heng" }, { kh: "កែវ", en: "Keo" },
+            { kh: "លី", en: "Ly" }, { kh: "ឡុង", en: "Long" }, { kh: "ម៉ៅ", en: "Mao" },
+            { kh: "មាស", en: "Meas" }, { kh: "ពេជ្រ", en: "Pich" }, { kh: "ប្រាក់", en: "Prak" },
+            { kh: "រស់", en: "Ros" }, { kh: "សេង", en: "Seng" }, { kh: "ស៊ិន", en: "Sin" },
+            { kh: "ទេព", en: "Tep" }, { kh: "យឹម", en: "Yim" }, { kh: "អ៊ុំ", en: "Oum" },
+            { kh: "ប៉ែន", en: "Pen" }, { kh: "ព្រហ្ម", en: "Prom" }, { kh: "សាន", en: "San" },
+            { kh: "ឯក", en: "Ek" }, { kh: "វង្ស", en: "Vong" }, { kh: "តាំង", en: "Taing" },
+            { kh: "អ៊ុង", en: "Ung" }, { kh: "ជួន", en: "Chuon" }, { kh: "ញ៉ែម", en: "Nhem" },
+            { kh: "ទូច", en: "Touch" }, { kh: "ឌិត", en: "Dith" }, { kh: "ប៉ុល", en: "Pol" },
+            { kh: "ឈន", en: "Chhorn" }, { kh: "ឈុន", en: "Chhun" }, { kh: "អៀម", en: "Eam" },
+            { kh: "ហាក់", en: "Hak" }, { kh: "ហុង", en: "Hong" }, { kh: "ហុយ", en: "Huy" },
+            { kh: "អ៊ឹម", en: "Im" }, { kh: "កឹម", en: "Kem" }, { kh: "ខាត់", en: "Khat" },
+            { kh: "ខៀវ", en: "Khieu" }, { kh: "គឹម", en: "Kim" }, { kh: "គង់", en: "Kong" },
+            { kh: "កុយ", en: "Koy" }, { kh: "ម៉ែន", en: "Men" }, { kh: "ម៉ុក", en: "Mok" },
+            { kh: "ណុប", en: "Nop" }, { kh: "នួន", en: "Nuon" }, { kh: "អ៊ូច", en: "Ouch" },
+            { kh: "ប៉ាង", en: "Pang" }, { kh: "ផែង", en: "Pheng" }, { kh: "ផល", en: "Phon" },
+            { kh: "សួស", en: "Sous" }, { kh: "សំ", en: "Sam" }, { kh: "ស៊ុយ", en: "Suy" },
+            { kh: "ថៃ", en: "Thai" }, { kh: "ថង", en: "Thong" }, { kh: "ទឹម", en: "Tim" },
+            { kh: "ទិត្យ", en: "Tit" }, { kh: "ទុង", en: "Tung" }, { kh: "អ៊ុយ", en: "Uy" },
+            { kh: "វ៉េង", en: "Veng" }, { kh: "យិន", en: "Yin" }, { kh: "យ៉ុង", en: "Yong" }
+        ];
+
+        const khmerGivenNames = [
+            // Male
+            { kh: "ពិសិដ្ឋ", en: "Piseth", gender: "male" }, { kh: "វិបុល", en: "Vibol", gender: "male" },
+            { kh: "ចាន់រិទ្ធ", en: "Chanrith", gender: "male" }, { kh: "តារារិទ្ធ", en: "Dararith", gender: "male" },
+            { kh: "កុសល", en: "Kosal", gender: "male" }, { kh: "មករា", en: "Makara", gender: "male" },
+            { kh: "មុនី", en: "Mony", gender: "male" }, { kh: "ផានិត", en: "Phanith", gender: "male" },
+            { kh: "ភក្ត្រា", en: "Pheaktra", gender: "male" }, { kh: "ភិរុណ", en: "Phirun", gender: "male" },
+            { kh: "រតនៈ", en: "Ratanak", gender: "male" }, { kh: "រិទ្ធី", en: "Rithy", gender: "male" },
+            { kh: "សំណាង", en: "Samnang", gender: "male" }, { kh: "សីហា", en: "Seiha", gender: "male" },
+            { kh: "សុវណ្ណ", en: "Sovann", gender: "male" }, { kh: "ឧត្តម", en: "Udom", gender: "male" },
+            { kh: "វាសនា", en: "Veasna", gender: "male" }, { kh: "វិចិត្រ", en: "Vichet", gender: "male" },
+            { kh: "វីរៈ", en: "Vireak", gender: "male" }, { kh: "វិសាល", en: "Visal", gender: "male" },
+            { kh: "វុទ្ធី", en: "Vuthy", gender: "male" }, { kh: "យុទ្ធ", en: "Yuth", gender: "male" },
+            { kh: "ពន្លឺ", en: "Ponleu", gender: "male" }, { kh: "បញ្ញា", en: "Panha", gender: "male" },
+            { kh: "បូរី", en: "Borey", gender: "male" }, { kh: "សារិទ្ធ", en: "Sarith", gender: "male" },
+            { kh: "ចក្រា", en: "Chakra", gender: "male" }, { kh: "ចម្រើន", en: "Chamroeun", gender: "male" },
+            { kh: "ជាំ", en: "Cheam", gender: "male" }, { kh: "ដារ៉ា", en: "Dara", gender: "male" },
+            { kh: "ឌីណា", en: "Dina", gender: "male" }, { kh: "ហេង", en: "Heng", gender: "male" },
+            { kh: "កាំ", en: "Kam", gender: "male" }, { kh: "កុសន", en: "Kosan", gender: "male" },
+            { kh: "នារិន", en: "Narin", gender: "male" }, { kh: "និមល", en: "Nimol", gender: "male" },
+            { kh: "អូសេ", en: "Osey", gender: "male" }, { kh: "ពុទ្ធី", en: "Puthy", gender: "male" },
+            { kh: "រដ្ឋា", en: "Ratha", gender: "male" }, { kh: "សំរេច", en: "Samrech", gender: "male" },
+            { kh: "សេរី", en: "Serey", gender: "male" }, { kh: "ស៊ីថា", en: "Sitha", gender: "male" },
+            { kh: "សុខា", en: "Sokha", gender: "male" }, { kh: "សុភ័ត្រ្ត", en: "Sopheaktra", gender: "male" },
+            { kh: "ធីតា", en: "Thida", gender: "male" }, { kh: "ទិត្យ", en: "Tith", gender: "male" },
+            { kh: "យ៉ារិទ្ធ", en: "Yarith", gender: "male" }, { kh: "បញ្ញវន្ត", en: "Bannhavoan", gender: "male" },
+            { kh: "សុធា", en: "Sothea", gender: "male" }, { kh: "សុជាតិ", en: "Socheat", gender: "male" },
+            { kh: "សុផានិត", en: "Sophanith", gender: "male" }, { kh: "បញ្ញាសិទ្ធិ", en: "Panhasith", gender: "male" },
+            { kh: "សិទ្ធិ", en: "Sith", gender: "male" }, { kh: "បញ្ញាឫទ្ធិ", en: "Panharith", gender: "male" },
+            
+            // Female
+            { kh: "បុប្ផា", en: "Bopha", gender: "female" }, { kh: "វណ្ណា", en: "Vanna", gender: "female" },
+            { kh: "រស្មី", en: "Raksmey", gender: "female" }, { kh: "ចិន្តា", en: "Chenda", gender: "female" },
+            { kh: "ចន្ធូ", en: "Chanthou", gender: "female" }, { kh: "ចរិយា", en: "Chariya", gender: "female" },
+            { kh: "ដាលីស", en: "Dalis", gender: "female" }, { kh: "កេសរ", en: "Kesor", gender: "female" },
+            { kh: "កល្យាណ", en: "Kalyan", gender: "female" }, { kh: "គន្ធា", en: "Kunthea", gender: "female" },
+            { kh: "លក្ខិណា", en: "Leakhena", gender: "female" }, { kh: "ម៉ាលីស", en: "Malis", gender: "female" },
+            { kh: "នារី", en: "Nary", gender: "female" }, { kh: "នីតា", en: "Nita", gender: "female" },
+            { kh: "ផល្លា", en: "Phalla", gender: "female" }, { kh: "ពីដោរ", en: "Pidor", gender: "female" },
+            { kh: "រចនា", en: "Rachana", gender: "female" }, { kh: "រតនា", en: "Rathana", gender: "female" },
+            { kh: "សុជាតា", en: "Socheata", gender: "female" }, { kh: "សុភា", en: "Sophea", gender: "female" },
+            { kh: "ស្រីមុំ", en: "Sreymom", gender: "female" }, { kh: "ស្រីនាង", en: "Sreyneang", gender: "female" },
+            { kh: "ស្រីពេជ្រ", en: "Sreypich", gender: "female" }, { kh: "សុវណ្ណារី", en: "Sovannary", gender: "female" },
+            { kh: "ធីតា", en: "Thida", gender: "female" }, { kh: "ទេវី", en: "Tevy", gender: "female" },
+            { kh: "អារីយ៉ា", en: "Ariya", gender: "female" }, { kh: "ឆវី", en: "Chhavy", gender: "female" },
+            { kh: "ច័ន្ទ", en: "Chan", gender: "female" }, { kh: "មាលា", en: "Mealea", gender: "female" },
+            { kh: "រម្យ", en: "Rom", gender: "female" }, { kh: "សាគរ", en: "Sakor", gender: "female" },
+            { kh: "សុជា", en: "Sochea", gender: "female" }, { kh: "សុម៉ាលី", en: "Somaly", gender: "female" },
+            { kh: "សូរិយា", en: "Soriya", gender: "female" }, { kh: "ស្រីភា", en: "Sreyphea", gender: "female" },
+            { kh: "ស្រីរដ្ឋ", en: "Sreyroth", gender: "female" }, { kh: "សួង", en: "Suong", gender: "female" },
+            { kh: "ទាវ", en: "Teav", gender: "female" }, { kh: "ចរណៃ", en: "Chanry", gender: "female" },
+            { kh: "បទុម", en: "Botum", gender: "female" }, { kh: "វួចឃាង", en: "Vuochkheang", gender: "female" },
+            { kh: "វួចលាង", en: "Vuochleang", gender: "female" }, { kh: "ម៉ានិត", en: "Manith", gender: "female" },
+            { kh: "បញ្ញារី", en: "Panhary", gender: "female" }, { kh: "សិរីវឌ្ឍនា", en: "Sireyvathana", gender: "female" },
+            { kh: "ឈរដា", en: "Chhorda", gender: "female" }, { kh: "កុលធីតា", en: "Kolthida", gender: "female" },
+            { kh: "មន្ត្រី", en: "Montrey", gender: "female" }, { kh: "ពេជ្រសូលីកា", en: "Pichsolika", gender: "female" }
+        ];
+
+        function generateKhmerName() {
+            const genderFilter = document.getElementById('khmer-name-gender').value;
+            let filteredGivenNames = khmerGivenNames;
+            
+            if (genderFilter !== 'all') {
+                filteredGivenNames = khmerGivenNames.filter(n => n.gender === genderFilter);
+            }
+
+            const fName = khmerFamilyNames[Math.floor(Math.random() * khmerFamilyNames.length)];
+            const gName = filteredGivenNames[Math.floor(Math.random() * filteredGivenNames.length)];
+            
+            document.getElementById('khmer-name-result').value = fName.kh + " " + gName.kh;
+            document.getElementById('khmer-latin-result').value = fName.en + " " + gName.en;
+            
+            showToast("NAME GENERATED");
+        }
+
+        function copyKhmerName() {
+            const input = document.getElementById('khmer-name-result');
+            if(!input.value) {
+                showToast("GENERATE A NAME FIRST");
+                return;
+            }
+            input.select();
+            document.execCommand('copy');
+            showToast("KHMER NAME COPIED");
+            window.getSelection().removeAllRanges();
+        }
+
+        function copyKhmerLatin() {
+            const input = document.getElementById('khmer-latin-result');
+            if(!input.value) {
+                showToast("GENERATE A NAME FIRST");
+                return;
+            }
+            input.select();
+            document.execCommand('copy');
+            showToast("LATIN NAME COPIED");
+            window.getSelection().removeAllRanges();
+        }
+
+        syncQuickInputControls();
+        renderCards();
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
