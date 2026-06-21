@@ -1,0 +1,18 @@
+{
+  "name": "create-fb-support-tool",
+  "version": "1.0.0",
+  "description": "Facebook Support Tool with integrated UID resolution backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "facebook",
+    "support",
+    "tool",
+    "uid",
+    "resolution"
+  ],
+  "author": "",
+  "license": "ISC"
+}

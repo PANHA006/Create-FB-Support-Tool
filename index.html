@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
     <!-- PWA Information -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6366f1">
@@ -14,23 +16,33 @@
 
     <title>Tool Support Pro - Unified</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #6366f1;
         }
-        
-        body { 
+
+        body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
             -webkit-tap-highlight-color: transparent;
             font-size: 12px;
         }
 
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
-        
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+
         .glass {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -43,8 +55,15 @@
         }
 
         @keyframes slideIn {
-            from { transform: translateY(15px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .animate-entry {
@@ -52,11 +71,12 @@
         }
     </style>
 </head>
+
 <body class="bg-[#F8FAFC] text-slate-900">
 
     <!-- Scrollable Wrapper -->
     <div class="min-h-screen flex flex-col">
-        
+
         <!-- Header (Non-fixed) -->
         <header class="bg-white ps-5 pe-2 py-2 flex justify-between items-center border-b border-slate-200">
             <div>
@@ -64,55 +84,82 @@
                 <p class="text-[10px] font-bold text-indigo-500 uppercase tracking-widest pt-1">Authentication Hub</p>
             </div>
             <div class="ml-4">
-                <img src="logo/logo.png" alt="AccuTool Pro Logo" class="w-16 h-16 object-contain p-2 m-1 rounded-3xl border border-slate-200">
+                <img src="logo/logo.png" alt="AccuTool Pro Logo"
+                    class="w-16 h-16 object-contain p-2 m-1 rounded-3xl border border-slate-200">
             </div>
         </header>
 
         <!-- Content Area -->
         <main class="flex-1 px-4 py-4 space-y-4">
-            
+
             <!-- NEW TOP: Khmer Name Generator -->
             <section class="max-w-2xl mx-auto w-full">
-                <div class="rounded-[2rem] border border-pink-300 bg-gradient-to-b from-white to-[#FFF5F8] p-4 sm:p-5 shadow-[0_28px_70px_-34px_rgba(244,114,182,0.22)]">
+                <div
+                    class="rounded-[2rem] border border-pink-300 bg-gradient-to-b from-white to-[#FFF5F8] p-4 sm:p-5 shadow-[0_28px_70px_-34px_rgba(244,114,182,0.22)]">
                     <div class="flex items-center justify-between gap-4 mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-[1rem] bg-[#FCE7F3] text-[#EC4899] flex items-center justify-center shadow-[inset_0_-1px_0_rgba(255,255,255,0.8)]">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            <div
+                                class="w-10 h-10 rounded-[1rem] bg-[#FCE7F3] text-[#EC4899] flex items-center justify-center shadow-[inset_0_-1px_0_rgba(255,255,255,0.8)]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
                             </div>
                             <div>
-                                <h2 class="text-[1rem] sm:text-[1rem] font-black tracking-tight text-slate-800">Khmer Name Generator</h2>
+                                <h2 class="text-[1rem] sm:text-[1rem] font-black tracking-tight text-slate-800">Khmer
+                                    Name Generator</h2>
                             </div>
                         </div>
-                        <span class="shrink-0 rounded-xl bg-[#FCE7F3] px-2 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-pink-500">Identity</span>
+                        <span
+                            class="shrink-0 rounded-xl bg-[#FCE7F3] px-2 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-pink-500">Identity</span>
                     </div>
-                    
+
                     <div class="flex flex-col gap-3">
                         <div class="flex gap-2">
                             <div class="relative flex-1">
                                 <input type="text" id="khmer-name-result" readonly placeholder="Khmer Name Here..."
                                     class="w-full rounded-2xl border border-[#FBCFE8] bg-[#FDF2F8] px-4 py-3 text-[13px] font-bold text-slate-800 outline-none transition-all">
                             </div>
-                            <button type="button" onclick="copyKhmerName()" class="w-12 shrink-0 rounded-2xl border border-[#FBCFE8] bg-white text-[#EC4899] flex items-center justify-center transition hover:bg-[#FDF2F8] active:scale-[0.99]">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 9h8v10H9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path></svg>
-                            </button>
-                        </div>
-                        
-                        <div class="flex gap-2">
-                            <div class="relative flex-1">
-                                <input type="text" id="khmer-latin-result" readonly placeholder="Khmer Latin Name Here..."
-                                    class="w-full rounded-2xl border border-[#FBCFE8] bg-[#FDF2F8] px-4 py-3 text-[13px] font-bold text-slate-800 outline-none transition-all">
-                            </div>
-                            <button type="button" onclick="copyKhmerLatin()" class="w-12 shrink-0 rounded-2xl border border-[#FBCFE8] bg-white text-[#EC4899] flex items-center justify-center transition hover:bg-[#FDF2F8] active:scale-[0.99]">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 9h8v10H9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path></svg>
+                            <button type="button" onclick="copyKhmerName()"
+                                class="w-12 shrink-0 rounded-2xl border border-[#FBCFE8] bg-white text-[#EC4899] flex items-center justify-center transition hover:bg-[#FDF2F8] active:scale-[0.99]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                        d="M9 9h8v10H9z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                        d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path>
+                                </svg>
                             </button>
                         </div>
 
                         <div class="flex gap-2">
-                            <button type="button" onclick="generateKhmerName()" class="flex-1 rounded-2xl bg-gradient-to-r from-[#EC4899] to-[#DB2777] px-4 py-2.5 text-sm font-extrabold text-white shadow-[0_16px_36px_-22px_rgba(236,72,153,0.95)] transition-all active:scale-[0.99] flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            <div class="relative flex-1">
+                                <input type="text" id="khmer-latin-result" readonly
+                                    placeholder="Khmer Latin Name Here..."
+                                    class="w-full rounded-2xl border border-[#FBCFE8] bg-[#FDF2F8] px-4 py-3 text-[13px] font-bold text-slate-800 outline-none transition-all">
+                            </div>
+                            <button type="button" onclick="copyKhmerLatin()"
+                                class="w-12 shrink-0 rounded-2xl border border-[#FBCFE8] bg-white text-[#EC4899] flex items-center justify-center transition hover:bg-[#FDF2F8] active:scale-[0.99]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                        d="M9 9h8v10H9z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                        d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <button type="button" onclick="generateKhmerName()"
+                                class="flex-1 rounded-2xl bg-gradient-to-r from-[#EC4899] to-[#DB2777] px-4 py-2.5 text-sm font-extrabold text-white shadow-[0_16px_36px_-22px_rgba(236,72,153,0.95)] transition-all active:scale-[0.99] flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                    </path>
+                                </svg>
                                 Generate
                             </button>
-                            <select id="khmer-name-gender" class="w-1/3 sm:w-1/3 rounded-2xl border border-[#FBCFE8] bg-white px-4 py-2.5 text-sm font-bold text-[#EC4899] outline-none">
+                            <select id="khmer-name-gender"
+                                class="w-1/3 sm:w-1/3 rounded-2xl border border-[#FBCFE8] bg-white px-4 py-2.5 text-sm font-bold text-[#EC4899] outline-none">
                                 <option value="all">All Genders</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -121,58 +168,85 @@
                     </div>
                 </div>
             </section>
-            
+
             <!-- TOP: 2FA Quick Checker -->
             <section class="max-w-2xl mx-auto w-full">
-                <div class="rounded-[2rem] border border-purple-300 bg-gradient-to-b from-white to-[#F5F8FF] p-4 sm:p-5 shadow-[0_28px_70px_-34px_rgba(15,23,42,0.22)]">
+                <div
+                    class="rounded-[2rem] border border-purple-300 bg-gradient-to-b from-white to-[#F5F8FF] p-4 sm:p-5 shadow-[0_28px_70px_-34px_rgba(15,23,42,0.22)]">
                     <div class="flex items-center justify-between gap-4 mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-[1rem] bg-[#EEF2FF] text-[#5D54F1] flex items-center justify-center shadow-[inset_0_-1px_0_rgba(255,255,255,0.8)]">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <div
+                                class="w-10 h-10 rounded-[1rem] bg-[#EEF2FF] text-[#5D54F1] flex items-center justify-center shadow-[inset_0_-1px_0_rgba(255,255,255,0.8)]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                    </path>
+                                </svg>
                             </div>
                             <div>
-                                <h2 class="text-[1rem] sm:text-[1rem] font-black tracking-tight text-slate-800">2FA Generator</h2>
+                                <h2 class="text-[1rem] sm:text-[1rem] font-black tracking-tight text-slate-800">2FA
+                                    Generator</h2>
                             </div>
                         </div>
-                        <span class="shrink-0 rounded-xl bg-[#EEF3FF] px-2 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">Secure</span>
+                        <span
+                            class="shrink-0 rounded-xl bg-[#EEF3FF] px-2 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">Secure</span>
                     </div>
-                    
+
                     <form id="quick-otp-form" class="space-y-3">
                         <div class="relative">
                             <input type="text" id="quick-2fa-input" placeholder="QIRU 4DP7 LJNL ..."
                                 class="w-full rounded-2xl border border-[#DDE5F8] bg-[#EEF3FF] px-4 py-3 pr-12 text-[11px] font-medium uppercase tracking-[0.1em] text-slate-800 placeholder-slate-500 outline-none transition-all focus:border-[#948FFF] focus:bg-white">
-                            <button id="quick-clear-input" type="button" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear secret key">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                            <button id="quick-clear-input" type="button"
+                                class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500"
+                                aria-label="Clear secret key">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                        d="M6 6l12 12M18 6L6 18"></path>
+                                </svg>
                             </button>
                         </div>
 
-                        <button type="submit" class="w-full rounded-2xl bg-gradient-to-r from-[#5D54F1] to-[#4D44E8] px-4 py-2.5 text-base font-extrabold text-white shadow-[0_16px_36px_-22px_rgba(93,84,241,0.95)] transition-all active:scale-[0.99]">
+                        <button type="submit"
+                            class="w-full rounded-2xl bg-gradient-to-r from-[#5D54F1] to-[#4D44E8] px-4 py-2.5 text-base font-extrabold text-white shadow-[0_16px_36px_-22px_rgba(93,84,241,0.95)] transition-all active:scale-[0.99]">
                             Generate Code
                         </button>
                     </form>
 
                     <div id="quick-result" class="hidden mt-4 animate-entry">
-                        <div class="overflow-hidden rounded-2xl border border-[#DDE5F8] bg-white shadow-[0_22px_45px_-34px_rgba(93,84,241,0.7)]">
-                            <div class="flex items-center justify-between gap-3 border-b border-[#DDE5F8] bg-[#EEF3FF] px-3 py-2">
+                        <div
+                            class="overflow-hidden rounded-2xl border border-[#DDE5F8] bg-white shadow-[0_22px_45px_-34px_rgba(93,84,241,0.7)]">
+                            <div
+                                class="flex items-center justify-between gap-3 border-b border-[#DDE5F8] bg-[#EEF3FF] px-3 py-2">
                                 <div class="flex items-center gap-2 flex-wrap">
-                                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#7A85F5]">Authentication Code</p>
+                                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#7A85F5]">
+                                        Authentication Code</p>
                                     <p id="quick-otp-timer" class="text-[11px] font-black text-[#5D54F1]">30s</p>
                                 </div>
-                                <button type="button" onclick="copyToClipboard('quick-otp-code')" class="w-8 h-8 rounded-xl border border-[#D7DEFA] bg-white text-[#5D54F1] flex items-center justify-center transition hover:bg-[#F7F8FF]">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 9h8v10H9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path></svg>
+                                <button type="button" onclick="copyToClipboard('quick-otp-code')"
+                                    class="w-8 h-8 rounded-xl border border-[#D7DEFA] bg-white text-[#5D54F1] flex items-center justify-center transition hover:bg-[#F7F8FF]">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                            d="M9 9h8v10H9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                            d="M7 15H6a2 2 0 01-2-2V6a2 2 0 012-2h7a2 2 0 012 2v1"></path>
+                                    </svg>
                                 </button>
                             </div>
                             <div class="px-3 py-4 text-center">
-                                <p id="quick-otp-code" class="text-[2rem] sm:text-[2.2rem] font-black tracking-[0.14em] text-[#28295C] leading-none">000000</p>
+                                <p id="quick-otp-code"
+                                    class="text-[2rem] sm:text-[2.2rem] font-black tracking-[0.14em] text-[#28295C] leading-none">
+                                    000000</p>
                             </div>
                             <div class="h-1.5 bg-[#E3E8FB]">
-                                <div id="quick-otp-progress" class="h-full bg-gradient-to-r from-[#5D54F1] to-[#6B63FF] transition-all duration-1000 ease-linear" style="width: 100%;"></div>
+                                <div id="quick-otp-progress"
+                                    class="h-full bg-gradient-to-r from-[#5D54F1] to-[#6B63FF] transition-all duration-1000 ease-linear"
+                                    style="width: 100%;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <!-- MIDDLE: Account Storage Form --><!-- MIDDLE: Account Storage Form -->
             <section class="max-w-2xl mx-auto w-full">
                 <div class="bg-white rounded-[2rem] p-6 neo-shadow border border-purple-300">
@@ -184,45 +258,73 @@
 
                         <div class="space-y-3">
                             <div class="relative">
-                                <label class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Profile Link</label>
+                                <label
+                                    class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Profile
+                                    Link</label>
                                 <div class="relative">
-                                    <input type="url" id="fb-link" placeholder="facebook.com/..." required 
+                                    <input type="url" id="fb-link" placeholder="facebook.com/..." required
                                         class="w-full bg-slate-50 border-2 border rounded-2xl px-4 py-3 pr-10 text-xs font-medium outline-none focus:border-indigo-500/20 focus:bg-white transition-all">
-                                    <button type="button" id="clear-fb-link" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear profile link">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                                    <button type="button" id="clear-fb-link"
+                                        class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500"
+                                        aria-label="Clear profile link">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                                d="M6 6l12 12M18 6L6 18"></path>
+                                        </svg>
                                     </button>
                                 </div>
                             </div>
-                            <p id="fb-link-hint" class="hidden text-[10px] font-medium text-amber-600 leading-relaxed px-1">
-                                Share links like <span class="font-bold">facebook.com/share/...</span> do not contain the UID directly. Open the share link first, then paste the redirected <span class="font-bold">profile.php?id=...</span> link.
+                            <p id="fb-link-hint"
+                                class="hidden text-[10px] font-medium text-amber-600 leading-relaxed px-1">
+                                Share links like <span class="font-bold">facebook.com/share/...</span> do not contain
+                                the UID directly. Open the share link first, then paste the redirected <span
+                                    class="font-bold">profile.php?id=...</span> link.
                             </p>
-                            
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div class="relative">
-                                    <label class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Secret Key</label>
+                                    <label
+                                        class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Secret
+                                        Key</label>
                                     <div class="relative">
-                                        <input type="text" id="fb-2fa" placeholder="QIRU 4DP7 LJNL ..." required 
+                                        <input type="text" id="fb-2fa" placeholder="QIRU 4DP7 LJNL ..." required
                                             class="w-full bg-slate-50 border-2 border rounded-2xl px-4 py-3 pr-10 text-xs font-medium outline-none focus:border-indigo-500/20 focus:bg-white transition-all">
-                                        <button type="button" id="clear-fb-2fa" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear secret key">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                                        <button type="button" id="clear-fb-2fa"
+                                            class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500"
+                                            aria-label="Clear secret key">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                                    d="M6 6l12 12M18 6L6 18"></path>
+                                            </svg>
                                         </button>
                                     </div>
                                 </div>
                                 <div class="relative">
-                                    <label class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Password</label>
+                                    <label
+                                        class="text-[9px] font-bold text-slate-600 uppercase tracking-widest ml-1 mb-1.5 block">Password</label>
                                     <div class="relative">
-                                        <input type="text" id="fb-pass" value="Digital@2026" placeholder="••••••••" required 
+                                        <input type="text" id="fb-pass" value="Digital@2026" placeholder="••••••••"
+                                            required
                                             class="w-full bg-slate-50 border-2 border rounded-2xl px-4 py-3 pr-10 text-xs font-medium outline-none focus:border-indigo-500/20 focus:bg-white transition-all">
-                                        <button type="button" id="clear-fb-pass" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500" aria-label="Clear password">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 6l12 12M18 6L6 18"></path></svg>
+                                        <button type="button" id="clear-fb-pass"
+                                            class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 transition hover:text-slate-500"
+                                            aria-label="Clear password">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                                    d="M6 6l12 12M18 6L6 18"></path>
+                                            </svg>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <button type="submit" class="w-full bg-gradient-to-r from-[#5D54F1] to-[#4D44E8] text-white font-extrabold py-3.5 rounded-2xl shadow-2xl active:scale-[0.98] transition-all flex justify-center items-center gap-2 text-xs uppercase tracking-wider">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-[#5D54F1] to-[#4D44E8] text-white font-extrabold py-3.5 rounded-2xl shadow-2xl active:scale-[0.98] transition-all flex justify-center items-center gap-2 text-xs uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
                             <span>Save to Private Vault</span>
                         </button>
                     </form>
@@ -236,37 +338,48 @@
                         <span class="w-1.5 h-3 bg-indigo-500 rounded-[2rem]"></span>
                         <h2 class="text-[9px] font-black text-slate-800 uppercase tracking-widest">Stored Records</h2>
                     </div>
-                    <button onclick="showClearConfirmModal()" class="text-[8px] font-bold text-red-400 hover:text-red-500 transition-colors uppercase tracking-widest">Clear Vault</button>
+                    <button onclick="showClearConfirmModal()"
+                        class="text-[8px] font-bold text-red-400 hover:text-red-500 transition-colors uppercase tracking-widest">Clear
+                        Vault</button>
                 </div>
 
                 <div id="account-list-container" class="grid grid-cols-1 gap-3">
                     <!-- Records injected here -->
                 </div>
-                
-                <div id="empty-state" class="text-center py-12 bg-white/40 border-2 border-dashed border-slate-300 rounded-[2rem]">
-                    <p class="text-slate-400 text-[9px] font-bold uppercase tracking-widest">Vault is currently empty</p>
+
+                <div id="empty-state"
+                    class="text-center py-12 bg-white/40 border-2 border-dashed border-slate-300 rounded-[2rem]">
+                    <p class="text-slate-400 text-[9px] font-bold uppercase tracking-widest">Vault is currently empty
+                    </p>
                 </div>
             </section>
         </main>
     </div>
 
     <!-- Confirmation Modal -->
-    <div id="confirm-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-white rounded-3xl p-8 max-w-sm mx-4 shadow-2xl transform scale-95 transition-all duration-300" id="confirm-modal-content">
+    <div id="confirm-modal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white rounded-3xl p-8 max-w-sm mx-4 shadow-2xl transform scale-95 transition-all duration-300"
+            id="confirm-modal-content">
             <div class="text-center">
                 <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
                     </svg>
                 </div>
                 <h3 class="text-lg font-extrabold text-slate-900 mb-2">Clear All Records?</h3>
-                <p class="text-sm text-slate-500 mb-6">This action will permanently delete all stored records from your vault. This cannot be undone.</p>
-                
+                <p class="text-sm text-slate-500 mb-6">This action will permanently delete all stored records from your
+                    vault. This cannot be undone.</p>
+
                 <div class="flex gap-3">
-                    <button onclick="closeModal()" class="flex-1 px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-2xl hover:bg-slate-200 transition-all">
+                    <button onclick="closeModal()"
+                        class="flex-1 px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-2xl hover:bg-slate-200 transition-all">
                         Cancel
                     </button>
-                    <button onclick="confirmClearAll()" class="flex-1 px-6 py-3 bg-red-500 text-white font-bold rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-200">
+                    <button onclick="confirmClearAll()"
+                        class="flex-1 px-6 py-3 bg-red-500 text-white font-bold rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-200">
                         Clear All
                     </button>
                 </div>
@@ -275,7 +388,8 @@
     </div>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-2xl text-[9px] font-extrabold shadow-2xl opacity-0 transition-all duration-300 pointer-events-none z-[100] translate-y-[20px] uppercase tracking-wider">
+    <div id="toast"
+        class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-2xl text-[9px] font-extrabold shadow-2xl opacity-0 transition-all duration-300 pointer-events-none z-[100] translate-y-[20px] uppercase tracking-wider">
         Notification
     </div>
 
@@ -286,8 +400,6 @@
         let quickOtpSecret = "";
         let fbLinkResolveToken = 0;
         let fbLinkResolveTimeout = null;
-        const FB_RESOLVER_PROXY = 'https://api.codetabs.com/v1/proxy/?quest=';
-
         // Extract ID from FB Link
         function extractFBID(url) {
             if (!url) return "";
@@ -342,7 +454,9 @@
                 /[?&]id=(\d{8,})/i,
                 /set=pb\.(\d{8,})/i,
                 /entity_id["'=:\s\\\/]+(\d{8,})/i,
-                /owner(?:_id)?["'=:\s\\\/]+(\d{8,})/i
+                /owner(?:_id)?["'=:\s\\\/]+(\d{8,})/i,
+                /userID["'=:\s\\\/]+(\d{8,})/i,
+                /USER_ID["'=:\s\\\/]+(\d{8,})/i
             ];
 
             for (const pattern of patterns) {
@@ -354,13 +468,21 @@
         }
 
         async function resolveFacebookUID(url) {
-            const response = await fetch(FB_RESOLVER_PROXY + encodeURIComponent(url));
+            const response = await fetch('/api/resolve-uid', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ url })
+            });
+
             if (!response.ok) {
-                throw new Error(`Resolver request failed with status ${response.status}`);
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || `Failed with status ${response.status}`);
             }
 
-            const content = await response.text();
-            return extractUIDFromResolvedContent(content);
+            const data = await response.json();
+            return data.uid;
         }
 
         document.getElementById('fb-link').addEventListener('input', (e) => {
@@ -409,7 +531,7 @@
         });
 
         // Clear buttons functionality for form fields
-        document.getElementById('clear-fb-link').addEventListener('click', function() {
+        document.getElementById('clear-fb-link').addEventListener('click', function () {
             const input = document.getElementById('fb-link');
             input.value = '';
             input.focus();
@@ -417,22 +539,22 @@
             updateUIDPreview("");
         });
 
-        document.getElementById('fb-2fa').addEventListener('input', function(e) {
+        document.getElementById('fb-2fa').addEventListener('input', function (e) {
             document.getElementById('clear-fb-2fa').classList.toggle('hidden', !e.target.value.trim());
         });
 
-        document.getElementById('clear-fb-2fa').addEventListener('click', function() {
+        document.getElementById('clear-fb-2fa').addEventListener('click', function () {
             const input = document.getElementById('fb-2fa');
             input.value = '';
             input.focus();
             this.classList.add('hidden');
         });
 
-        document.getElementById('fb-pass').addEventListener('input', function(e) {
+        document.getElementById('fb-pass').addEventListener('input', function (e) {
             document.getElementById('clear-fb-pass').classList.toggle('hidden', !e.target.value.trim());
         });
 
-        document.getElementById('clear-fb-pass').addEventListener('click', function() {
+        document.getElementById('clear-fb-pass').addEventListener('click', function () {
             const input = document.getElementById('fb-pass');
             input.value = '';
             input.focus();
@@ -671,11 +793,20 @@
 
         document.getElementById('account-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Generate auto-increment ID
-            const lastRecordId = accounts.length > 0 ? parseInt(accounts[accounts.length - 1].recordId.replace('ID', '')) : 0;
-            const newRecordId = 'FB' + String(lastRecordId + 1).padStart(3, '0');
-            
+            let lastNum = 0;
+            if (accounts.length > 0) {
+                const match = accounts[accounts.length - 1].recordId.match(/\d+/);
+                if (match) {
+                    lastNum = parseInt(match[0], 10);
+                }
+            }
+            if (isNaN(lastNum)) {
+                lastNum = 0;
+            }
+            const newRecordId = 'FB' + String(lastNum + 1).padStart(3, '0');
+
             const acc = {
                 recordId: newRecordId,
                 id: Date.now(),
@@ -701,7 +832,7 @@
             const container = document.getElementById('account-list-container');
             const empty = document.getElementById('empty-state');
             container.innerHTML = '';
-            
+
             if (accounts.length === 0) {
                 empty.classList.remove('hidden');
                 return;
@@ -711,7 +842,7 @@
             accounts.slice().reverse().forEach((acc) => {
                 const div = document.createElement('div');
                 div.className = "bg-white px-5 py-3.5 rounded-[2rem] border border-blue-200 neo-shadow animate-entry relative group";
-                
+
                 div.innerHTML = `
                     <div class="flex justify-between items-start gap-3">
                         <div class="space-y-1 flex-1 min-w-0">
@@ -749,14 +880,14 @@
             el.select();
             document.execCommand('copy');
             document.body.removeChild(el);
-            
+
             // Visual feedback - show checkmark permanently and reveal delete button
             const copyBtn = document.getElementById(`copy-btn-${id}`);
             if (copyBtn) {
                 copyBtn.innerHTML = '<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>';
                 copyBtn.classList.add('bg-green-50', 'border-green-300');
                 copyBtn.classList.remove('bg-slate-50', 'border-blue-300', 'text-slate-400');
-                
+
                 // Show delete button permanently
                 const parentDiv = copyBtn.closest('.flex.flex-col');
                 if (parentDiv) {
@@ -767,7 +898,7 @@
                     }
                 }
             }
-            
+
             showToast("DATA COPIED TO CLIPBOARD");
         }
 
@@ -790,7 +921,7 @@
         }
 
         function clearAll() {
-            if(confirm("Confirm: This will permanently delete all local records.")) {
+            if (confirm("Confirm: This will permanently delete all local records.")) {
                 accounts = [];
                 localStorage.setItem('saved_accounts_grid_v6', JSON.stringify(accounts));
                 renderCards();
@@ -899,7 +1030,7 @@
             { kh: "សុធា", en: "Sothea", gender: "male" }, { kh: "សុជាតិ", en: "Socheat", gender: "male" },
             { kh: "សុផានិត", en: "Sophanith", gender: "male" }, { kh: "បញ្ញាសិទ្ធិ", en: "Panhasith", gender: "male" },
             { kh: "សិទ្ធិ", en: "Sith", gender: "male" }, { kh: "បញ្ញាឫទ្ធិ", en: "Panharith", gender: "male" },
-            
+
             // Female
             { kh: "បុប្ផា", en: "Bopha", gender: "female" }, { kh: "វណ្ណា", en: "Vanna", gender: "female" },
             { kh: "រស្មី", en: "Raksmey", gender: "female" }, { kh: "ចិន្តា", en: "Chenda", gender: "female" },
@@ -931,23 +1062,23 @@
         function generateKhmerName() {
             const genderFilter = document.getElementById('khmer-name-gender').value;
             let filteredGivenNames = khmerGivenNames;
-            
+
             if (genderFilter !== 'all') {
                 filteredGivenNames = khmerGivenNames.filter(n => n.gender === genderFilter);
             }
 
             const fName = khmerFamilyNames[Math.floor(Math.random() * khmerFamilyNames.length)];
             const gName = filteredGivenNames[Math.floor(Math.random() * filteredGivenNames.length)];
-            
+
             document.getElementById('khmer-name-result').value = fName.kh + " " + gName.kh;
             document.getElementById('khmer-latin-result').value = fName.en + " " + gName.en;
-            
+
             showToast("NAME GENERATED");
         }
 
         function copyKhmerName() {
             const input = document.getElementById('khmer-name-result');
-            if(!input.value) {
+            if (!input.value) {
                 showToast("GENERATE A NAME FIRST");
                 return;
             }
@@ -959,7 +1090,7 @@
 
         function copyKhmerLatin() {
             const input = document.getElementById('khmer-latin-result');
-            if(!input.value) {
+            if (!input.value) {
                 showToast("GENERATE A NAME FIRST");
                 return;
             }
@@ -982,4 +1113,5 @@
         }
     </script>
 </body>
+
 </html>
